@@ -1,3 +1,4 @@
+#include <iostream>
 #include <unordered_map>
 #include <vector>
 #include <string>
@@ -14,11 +15,23 @@ public:
 
         for(int i =0; i<s.length(); i++){
             S[s[i]]++;
+            cout<<"S[s[i]]: "<<S[s[i]]<<endl;
             T[t[i]]++; 
+            cout<< " T[t[i]]: "<<T[t[i]]<<endl;
         }
+        for (const auto& pair : S) {
+        cout << "Key: " << pair.first << ", Value: " << pair.second << endl;
+        }
+        cout<<endl;
+        for (const auto& pair : T) {
+        cout << "Key: " << pair.first << ", Value: " << pair.second << endl;
+        }
+
+
         return S==T;
 
 
 
     }
 };
+
