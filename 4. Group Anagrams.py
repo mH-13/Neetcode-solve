@@ -1,3 +1,7 @@
+# Problem: Group Anagrams
+# Link: https://leetcode.com/problems/group-anagrams/
+
+
 from typing import List
 from collections import defaultdict
 
@@ -20,7 +24,6 @@ class Solution:
 # Space complexity: O(NK) where N is the length of strs, and K is the maximum length of a string in strs. The total information content stored in res is O(NK) because each string is stored once, and each string costs O(K) space.
 # Runtime: 96 ms, faster than 97.68% of Python3 online submissions for Group Anagrams.
 # Memory Usage: 17.3 MB, less than 99.67% of Python3 online submissions for Group Anagrams.
-# Link: https://leetcode.com/problems/group-anagrams/
 
 
 #solution 2
