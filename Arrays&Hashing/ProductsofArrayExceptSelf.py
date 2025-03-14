@@ -60,3 +60,25 @@ class Solution:
 
 
 # This approach has a time complexity of O(N) and a space complexity of O(N) where N is the length of the input list nums. The algorithm calculates the prefix product and postfix product arrays to efficiently compute the product of all elements except the current element. The resulting array contains the desired products for each element in the input list. 
+
+
+
+#more optimized 
+
+class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+
+        n = len(nums)
+        res = [1] * n
+        
+        prefix = 1
+        for i in range(0, n):
+            res[i] = prefix
+            prefix  *= nums[i]
+
+        postfix = 1
+        for i in range(n-1, -1, -1):
+            res[i] *= postfix
+            postfix *= nums[i]
+
+        return res
