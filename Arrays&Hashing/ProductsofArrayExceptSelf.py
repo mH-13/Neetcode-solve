@@ -28,8 +28,35 @@ class Solution:
 
 
 # Optimized Approach
-# The optimized approach uses two passes through the input list to calculate the product of all elements except the current element.
-# The first pass calculates the product of all elements to the left of the current element, and the second pass calculates the product of all elements to the right of the current element.
-# The final result is obtained by multiplying the left and right products for each element.
-# The time complexity of this approach is O(N) where N is the length of the input list nums.
-# The space complexity is O(N) as we use two additional lists to store the left and right products.
+
+class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+
+        n = len(nums)
+        res = [1] * n
+        prefix = [1] * n
+        postfix =[1] * n
+
+        for i in range(0, n):
+            if (i ==0): 
+                prefix[i] = nums[i]
+            else:
+                prefix[i] = nums[i] * prefix[i-1]
+
+        for i in range(n-1, -1, -1):
+            if i == n-1:
+                postfix[i] = nums[i]
+            else:
+                postfix[i] = nums[i] * postfix[i+1]
+
+        for i in range(0, n):
+            if i == 0: 
+                res[i] = postfix[i+1]
+            elif i == n-1: 
+                res[i] = prefix[i-1]
+            else:
+                res[i] = prefix[i-1] * postfix[i+1]
+        return res
+
+
+# This approach has a time complexity of O(N) and a space complexity of O(N) where N is the length of the input list nums. The algorithm calculates the prefix product and postfix product arrays to efficiently compute the product of all elements except the current element. The resulting array contains the desired products for each element in the input list. 
