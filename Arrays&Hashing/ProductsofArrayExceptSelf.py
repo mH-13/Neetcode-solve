@@ -74,7 +74,7 @@ class Solution:
         prefix = 1
         for i in range(0, n):
             res[i] = prefix
-            prefix  *= nums[i] #here, 
+            prefix  *= nums[i]
 
         postfix = 1
         for i in range(n-1, -1, -1):
@@ -84,4 +84,4 @@ class Solution:
         return res
     
     
-    
+# time
