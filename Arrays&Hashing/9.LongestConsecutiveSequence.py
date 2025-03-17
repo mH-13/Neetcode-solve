@@ -15,5 +15,3 @@ class Solution:
 
             res = max(res, strek)
         return res
-
-        
