@@ -1,17 +1,13 @@
-
 from typing import List
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-        newstr = ""
+        s = ''.join([i for i in s if i.isalnum()]).lower()
+        return s == s[::-1]
         
-        for c in s:
-            if c.isalnum():
-                newstr += c.lower()
-                
-            return newstr == newstr[::-1]
         
 if __name__ == "__main__":
     solution = Solution()
     input_str = "Was it a car or a cat I saw?"
     result = solution.isPalindrome(input_str)
     print(result)
+    
