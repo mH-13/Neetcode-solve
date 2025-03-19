@@ -1,13 +1,18 @@
 from typing import List
-class Solution:
-    def isPalindrome(self, s: str) -> bool:
-        s = ''.join([i for i in s if i.isalnum()]).lower()
-        return s == s[::-1]
+
+numbers=[-5,-3,0,2,4,6,8]
+target=5
+l, r = 0, len(numbers)-1
+res = []
+
+while l<r:
+    if numbers[l] + numbers[r] > target:
+        r -= 1
+    elif numbers[l] + numbers[r] < target:
+        l += 1
+    else:
+        res.extend([l+1, r+1])
+        break
+
+print(res)
         
-        
-if __name__ == "__main__":
-    solution = Solution()
-    input_str = "Was it a car or a cat I saw?"
-    result = solution.isPalindrome(input_str)
-    print(result)
-    
