@@ -1,8 +1,6 @@
 #leetcode link: https://leetcode.com/problems/valid-parentheses/
 
-
 from  typing import List
-
 
 class Solution:
     def isValid(self, s: str) -> bool:
