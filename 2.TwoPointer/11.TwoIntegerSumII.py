@@ -44,6 +44,6 @@ class Solution:
             else:
                 res.extend([l+1, r+1])
                 return res
-              
+
 #Time complexity: O(n) and space complexity: O(1) so this is optimal solution
 #this approach is better than the previous one because we are using two pointer approach to solve the problem
