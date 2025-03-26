@@ -4,7 +4,7 @@
 # # Difficulty: Hard
 
 #fist solution with O(n) time complexity and O(n) space complexity
-
+from typing import List
 class Solution:
     def trap(self, height: List[int]) -> int:
         total = 0
