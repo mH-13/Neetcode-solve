@@ -63,4 +63,3 @@ class Solution:
         return total
     
 #Time complexity: O(n) and space complexity: O(1) so this is optimal solution 
-#
