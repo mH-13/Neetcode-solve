@@ -32,3 +32,35 @@ class Solution:
         return total
 
 #Time complexity: O(n) and space complexity: O(n) so this is optimal solution 
+
+
+#for the optimized solution with O(n) time complexity and O(1) space complexity, refer to the below snippet:
+
+#solution 2:
+
+class Solution:
+    def trap(self, height: List[int]) -> int:
+        total = 0
+        l = 0
+        r = len(height) - 1
+        lftmx = 0
+        rhsmx = 0
+
+        while l<r:
+            if height[l] < height[r]:
+                if height[l] >= lftmx:
+                    lftmx = height[l]
+                else:
+                    total += lftmx - height[l]
+                l += 1
+            else:
+                if height[r] >= rhsmx:
+                    rhsmx = height[r]
+                else:
+                    total += rhsmx - height[r]
+                r -= 1
+
+        return total
+    
+#Time complexity: O(n) and space complexity: O(1) so this is optimal solution 
+#
