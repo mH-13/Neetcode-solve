@@ -56,6 +56,42 @@ class Solution:
 #Time complexity: O(n), Space complexity: O(1) but still not optimal
 
 
+#lower runtime
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        n = len(prices)
+        l = 0
+        r = 1
+        profit = 0
+        
+        while(r < n ):
+            if prices[r] > prices[l]:
+                pr = prices[r] - prices[l]
+                profit = max(profit, pr)
+            else:
+                l = r
+            r += 1
+        return profit
+
+
+#best runtime
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        min_pri = float('inf')
+        max_profit = 0
+        
+        for p in prices:
+            if p < min_pri:
+                min_pri = p
+            
+            profit = p - min_pri
+
+            if profit > max_profit:
+                max_profit = profit
+        return max_profit
+    
+    
+
 if __name__ == "__main__":
     solution = Solution()
     prices=[5,1,5,6,7,1,10]
