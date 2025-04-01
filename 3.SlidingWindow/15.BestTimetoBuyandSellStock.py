@@ -90,9 +90,10 @@ class Solution:
                 max_profit = profit
         return max_profit
     
-    
+#
 
 if __name__ == "__main__":
     solution = Solution()
     prices=[5,1,5,6,7,1,10]
     print(solution.maxProfit(prices))
+    
