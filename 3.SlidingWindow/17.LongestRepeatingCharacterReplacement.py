@@ -7,4 +7,4 @@
 from typing import List
 
 
-# brute force solution
+# brute force solution O(n^2)
