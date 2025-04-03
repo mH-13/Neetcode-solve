@@ -7,3 +7,4 @@
 from typing import List
 
 
+# brute force solution
