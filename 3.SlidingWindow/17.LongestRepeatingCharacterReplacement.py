@@ -10,6 +10,10 @@ from typing import List
 
 # brute force solution O(n^2)
 
+
+
+
+
 def characterReplacement(s: str, k: int) -> int:
   max_len = 0
   max_freq = 0
