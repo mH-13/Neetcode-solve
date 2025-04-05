@@ -12,7 +12,6 @@ class Solution:
         for strng in strs:
             sortedS = ''.join(sorted(strng)) # sorted() returns a list of sorted characters in s and join() joins them back to a string 
             # print(sortedS) # aet -> aet, tea -> aet, eat -> aet  # sortedS is the key
-            # print(res[sortedS]) # [] -> ['aet'] -> ['aet', 'tea'] -> ['aet', 'tea', 'eat']
             # print(res) # defaultdict(<class 'list'>, {'aet': ['aet', 'tea', 'eat']})
             # print(res.values()) # dict_values([['aet', 'tea', 'eat']])
             # print(list(res.values())) # [['aet', 'tea', 'eat']]
@@ -21,7 +20,6 @@ class Solution:
         return list(result.values()) # returns the values of the dictionary as a list 
     
 # Time complexity: O(NKlogK) where N is the length of strs, and K is the maximum length of a string in strs. The outer loop has complexity O(N) as we iterate through each string. Then, we sort each string in O(KlogK) time.
-# Space complexity: O(NK) where N is the length of strs, and K is the maximum length of a string in strs. The total information content stored in res is O(NK) because each string is stored once, and each string costs O(K) space.
 # Runtime: 96 ms, faster than 97.68% of Python3 online submissions for Group Anagrams.
 # Memory Usage: 17.3 MB, less than 99.67% of Python3 online submissions for Group Anagrams.
 
@@ -49,5 +47,4 @@ class Solution:
     
     
 # Time complexity: O(NK) where N is the length of strs, and K is the maximum length of a string in strs. Counting each string is linear in the size of the string, and we count every string.
-# Space complexity: O(NK) where N is the length of strs, and K is the maximum length of a string in strs. The total information content stored in res is O(NK) because each string is stored once, and each string costs O(K) space.
 # Runtime: 88 ms, faster than 99.89% of Python3 online submissions for Group Anagrams.
