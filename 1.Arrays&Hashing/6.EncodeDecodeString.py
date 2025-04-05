@@ -32,8 +32,7 @@ class Solution:
             i = j
 
         return result # returns the list of decoded strings
-      
-      
+
 # Time complexity: O(N) where N is the total length of the strings in the input list. The encode function iterates through each string in the list and concatenates the length of the string with the string itself. The decode function iterates through the encoded string and decodes each string. Both operations are linear in the length of the strings.
 
 # The encode function iterates through each string in the input list and concatenates the length of the string with the string itself, separated by a '#' character. The resulting string is returned as the encoded representation of the input list of strings. The decode function reads the encoded string and extracts the length of each string and the corresponding substring. The decoded strings are stored in a list and returned as the result. 

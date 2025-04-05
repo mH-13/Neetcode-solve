@@ -8,11 +8,10 @@ from typing import List
 
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-
         frequencyCount = {} # dictionary to store the frequency of each number in nums 
 
         for num in nums: 
-            frequencyCount[num] = frequencyCount.get(num, 0) + 1 # get() returns the value of the key if it is in the dictionary, otherwise it returns the default value 0 and then we add 1 to it 
+            frequencyCount[num] = frequencyCount.get(num, 0) + 1 # get() returns the value of the key if it is in the dictionary,   otherwise it returns the default value 0 and then we add 1 to it 
             # get(num, 0) + 1 is equivalent to frequencyCount[num] = frequencyCount[num] + 1 if num is in frequencyCount else frequencyCount[num] = 0 + 1
 
         top_frequent_numbers = sorted(frequencyCount, key = frequencyCount.get, reverse = True)[:k]
@@ -24,7 +23,6 @@ class Solution:
         return list(top_frequent_numbers) # returns the list of top k frequent numbers 
 
 # Time complexity: O(NlogN) where N is the length of nums. Counting each number is linear in the size of the list, and we count every number. Sorting the unique numbers in frequencyCount takes O(NlogN) time. 
-# Space complexity: O(N) where N is the length of nums. The space complexity of the dictionary is O(N) because the dictionary stores each element in nums.
 # Runtime: 96 ms, faster than 93.68% of Python3 online submissions for Top K Frequent Elements.
 
 
@@ -101,9 +99,8 @@ class Solution:
                 break
 
         return result[:k] # returns the top k frequent elements
-      
+
 # Time complexity: O(N) where N is the length of nums. Counting each number is linear in the size of the list, and we count every number. Iterating through the buckets is also linear in the size of the list. 
-# Space complexity: O(N) where N is the length of nums. The space complexity of the dictionary is O(N), and the buckets store at most N elements.
 
 #Bukcet sort is more efficient than heapsort because it does not require sorting the numbers with the same frequency count and is more efficient.
 #Heapsort is more efficient than sorting the dictionary based on the values because it does not require sorting the dictionary based on the values and is more efficient.

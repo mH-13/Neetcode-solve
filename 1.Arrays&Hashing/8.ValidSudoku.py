@@ -25,6 +25,9 @@ class Solution:
 
         return True
 
+# Time complexity: O(1) since the board is always 9x9. The space complexity is also O(1) since the size of the sets is constant.
+# The algorithm uses three dictionaries to keep track of the numbers seen in each row, column, and 3x3 grid. It iterates through each cell in the board, checking if the number has already been seen in the corresponding row, column, or grid. If it has, the function returns False. If no duplicates are found, it returns True.
+# The algorithm efficiently checks for duplicates in a Sudoku board by using sets to store the numbers seen in each row, column, and grid. The use of dictionaries allows for quick lookups and insertions, making the algorithm efficient and easy to understand.
 
 
 
