@@ -94,7 +94,6 @@ if __name__ == "__main__":
     print(result)
     
     
-
 #Time complexity: O(n) 
 #Space complexity: O(n)
 #using list comprehension to get the alphanumeric characters from the string and converting it to lower case 

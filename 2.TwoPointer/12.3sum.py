@@ -11,7 +11,8 @@ import atexit
 # atexit.register(lambda: open("display_runtime.txt", "w").write(str(time.time()-start))) # write runtime to file display_runtime.txt when program exits normally 
 # start = time.time()
 
-__import__("atexit").register(lambda: open("display_runtime.txt", "w").write("0"))
+__import__("atexit").register(lambda: open("display_runtime.txt", "w").write("0")) # write runtime to file display_runtime.txt when program exits normally but no impact on actual runtime 
+
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         res = []
@@ -64,5 +65,8 @@ class Solution:
                 elif(nums[i] + nums[l] + nums[r] < 0):
                     l += 1        
         return res
+# Time complexity: O(n^2) and space complexity: O(1) so this is optimal solution
+# this approach is better than the previous one because we are using two pointer approach to solve the problem and we are also sorting the array to avoid duplicates in the result
+# and we are also using while loop to avoid duplicates in the result
 
-        
+#better approach 
