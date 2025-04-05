@@ -35,14 +35,12 @@ class Solution:
             
             for c in s:
                 count[ord(c)- ord('a')] += 1 
-                # ord('a') = 97, ord('b') = 98, ............ , ord('y') = 121, ord('z') = 122
-                # print(count) # [1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 
+                # ord('a') = 97, ord('b') = 98, ...... , ord('y') = 121, ord('z') = 122
+                # print(count) # [1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 (for eat)
     
             res[tuple(count)].append(s) # tuple(count) is the key and s is the value 
             # print(res) # defaultdict(<class 'list'>, {(1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1): ['eat']})
             # print(res.values()) # dict_values([['eat']])
-            # print(list(res.values())) # [['eat']]
-        
         return list(res.values()) # returns the values of the dictionary as a list
     
     
