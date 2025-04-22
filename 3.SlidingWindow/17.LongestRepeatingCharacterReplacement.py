@@ -14,20 +14,25 @@ from typing import List
 
 
 
-def characterReplacement(s: str, k: int) -> int:
-  max_len = 0
-  max_freq = 0
-  count = {}
-  left = 0
 
-  for right in range(len(s)):
-    count[s[right]] = count.get(s[right], 0) + 1
-    max_freq = max(max_freq, count[s[right]])
+class Solution:
+    def characterReplacement(self, s: str, k: int) -> int:
+        res = 0
+        count = {}
+        l = 0
+        maxf = 0
+        for r in range(len(s)):
+            count[s[r]] = 1 + count.get(s[r], 0)
+            maxf = max(maxf, count[s[r]]) # max frequency of the character in the window
+            # if the window size - max frequency > k, then we need to shrink the window
 
-    while (right - left + 1) - max_freq > k:
-      count[s[left]] -= 1
-      left += 1
+            while (r-l+1 )- max(count.values()) > k: # this is the only difference from the above problem is to check the max frequency of the character in the window
+                # shrink the window and remove the leftmost character from the window 
+                count[s[l]] -= 1
+                l += 1
+            
+            res = max(res,r-l+1)
 
-    max_len = max(max_len, right - left + 1)
+        return res
 
-  return max_len
+        
