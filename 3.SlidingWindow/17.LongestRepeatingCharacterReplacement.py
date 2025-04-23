@@ -22,7 +22,9 @@ class Solution:
         l = 0
         maxf = 0
         for r in range(len(s)):
-            count[s[r]] = 1 + count.get(s[r], 0)
+            count[s[r]] = 1 + count.get(s[r], 0) # count.get() gets the value of the key if it exists, else returns 0  
+            #sample: count = {'A': 1, 'B': 1, 'C': 0, 'D': 0} 
+            
             maxf = max(maxf, count[s[r]]) # max frequency of the character in the window
             # if the window size - max frequency > k, then we need to shrink the window
 

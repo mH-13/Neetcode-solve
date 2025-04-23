@@ -5,6 +5,20 @@
 from typing import List
 from collections import Counter
 
+#brute force solution O(n^2)
+
+class Solution:
+    def checkInclusion(self, s1: str, s2: str) -> bool:
+        s1 = sorted(s1)
+
+        for i in range(len(s2)): 
+            for j in range(i, len(s2)):
+                newstr = s2[i:j+1] # substring of s2 and check if it is a permutation of s1 
+                newstr = sorted(newstr)
+
+                if newstr == s1: 
+                    return True
+        return False
 
 
 
