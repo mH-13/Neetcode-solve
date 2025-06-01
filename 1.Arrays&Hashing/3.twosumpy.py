@@ -2,6 +2,29 @@
 #leetcode problem no 1
 #link: https://leetcode.com/problems/two-sum/ 
 
+
+
+# Brute force solution
+def two_sum_easier(nums, target):
+    for i in range(len(nums)):
+        for j in range(i + 1, len(nums)):
+            if nums[i] + nums[j] == target:
+                return [i, j]
+    return []
+# Example usage:
+if __name__ == "__main__":
+    nums = [2, 7, 11, 15]
+    target = 9
+    result = two_sum_easier(nums, target)
+    print(f"Indices of the two numbers that add up to {target}: {result}")
+    # Output: Indices of the two numbers that add up to 9: [0, 1]
+    
+    
+    
+    
+    
+# More efficient solution using a hash map
+from typing import List
 def two_sum(nums, target):
     num_to_index = {}
     for index, num in enumerate(nums):
